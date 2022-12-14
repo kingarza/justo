@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs'); %>
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+          <h1>Hits of David</h1>
+
+          <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Description</th>
+                <th scope="col">Hitmen in Charge</th>
+                <th scope="col">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>David</td>
+                <td>david@justo.mx</td>
+                <td>Lorem ipsum dolor sit amet</td>
+                <td>
+                  <a
+                    tabindex="0"
+                    class="btn btn-md btn-light"
+                    role="button"
+                    data-bs-toggle="popover"
+                    data-bs-trigger="focus"
+                    data-bs-title="Title 1"
+                    data-bs-content="And here's some amazing content. It's very engaging. Right?"
+                    >Hitmen in Charge</a
+                  >
+                </td>
+                <td>
+                  <a href="/hitmen/1" class="btn btn-light" role="button"
+                    >Details →</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>David</td>
+                <td>david@justo.mx</td>
+                <td>Lorem ipsum dolor sit amet</td>
+                <td>
+                  <a
+                    tabindex="0"
+                    class="btn btn-md btn-light"
+                    role="button"
+                    data-bs-toggle="popover"
+                    data-bs-trigger="focus"
+                    data-bs-title="Title 2"
+                    data-bs-content="And here's some amazing content. It's very engaging. Right?"
+                    >Hitmen in Charge</a
+                  >
+                </td>
+                <td>
+                  <a href="/hitmen/2" class="btn btn-light" role="button"
+                    >Details →</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const popoverTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="popover"]'
+      );
+      const popoverList = [...popoverTriggerList].map(
+        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+      );
+    </script>
+  </body>
+</html>

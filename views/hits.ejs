@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs'); %>
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+          <h1>Hits of David</h1>
+          <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Target</th>
+                <th scope="col">Status</th>
+                <th scope="col">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% data.forEach(person => { %>
+              <tr>
+                <th scope="row"><%- person.id %></th>
+                <th><%- person.target %></th>
+                <% if (person.status) { %>
+                <td><span class="badge text-bg-success">Completed</span></td>
+                <%} else { %>
+                <td><span class="badge text-bg-danger">Failed</span></td>
+                <% } %>
+                <td>
+                  <a
+                    href="/hits/<%-person.id%>"
+                    class="btn btn-light"
+                    role="button"
+                    >Details →</a
+                  >
+                </td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <% if (sendAlert) { %>
+  <script>
+    console.log("se envió la alerta");
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Hit created successfully",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+    // Reference: G4G How to modify URL without reloading the page using JavaScript ?
+    let stateObj = { id: "100" };
+    window.history.replaceState(stateObj, "hits", "/hits");
+  </script>
+  <% } %>
+</html>

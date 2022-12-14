@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <%- include('./partials/navbar.ejs'); %>
+    <!-- Reference: https://mdbootstrap.com/docs/standard/extended/login/ -->
+    <section class="vh-100">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-2-strong" style="border-radius: 1rem">
+              <div class="card-body p-5 text-center">
+                <h3 class="mb-5">Create Hit</h3>
+                <form
+                  class="form-outline mb-4"
+                  action="/hits/create"
+                  method="POST"
+                >
+                  <select
+                    class="form-select form-select-lg"
+                    aria-label="Default select example"
+                    required="required" name="assignedTo"
+                  >
+                    <option>Select an option</option>
+                    <% data.forEach(dependent => { %>
+                    <option value="<%- dependent.email %>">
+                      <%- dependent.email %>
+                    </option>
+                    <% }); %>
+                  </select>
+                  <label class="form-label" for="Assigned To"
+                    >Assigned To</label
+                  >
+                  <input
+                    type="description"
+                    name="description"
+                    class="form-control form-control-lg"
+                  />
+                  <label class="form-label" for="description"
+                    >Description</label
+                  >
+                  <input
+                    type="target"
+                    name="target"
+                    class="form-control form-control-lg"
+                  />
+                  <label class="form-label" for="target">Target</label>
+                  <br /><br />
+                  <button class="btn btn-dark" type="submit">Create Hit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

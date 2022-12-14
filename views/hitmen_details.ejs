@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <!-- Reference: https://mdbootstrap.com/docs/standard/extended/login/ -->
+    <%- include('./partials/navbar.ejs'); %>
+    <section class="vh-100">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card text-center">
+              <div class="card-header text-bg-danger">Antoine</div>
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+              </div>
+            </div>
+            <br /><br />
+            <a href="/hitmen" class="d-grid gap-2 btn btn-dark">← Go Back</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
